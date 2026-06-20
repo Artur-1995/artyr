@@ -27,12 +27,13 @@ $projects = json_decode(file_get_contents('projects.json'), true) ?? [];
     <h1 class="text-center mb-4">Мои проекты</h1>
     <div class="row">
         <?php foreach ($projects as $key => $project): ?>
-        <div class="col-md-4 mb-4">
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
             <div class="card h-100 shadow-hover">
                 <img src="<?= $project['image'] ?: 'https://via.placeholder.com/300' ?>" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title"><?= $project['title'] ?></h5>
                     <p class="card-text"><?= $project['description'] ?></p>
+                    <a href="admin.php?project_name=<?= $project['title'] ?>" class="btn btn-primary" target="_blank">Редактировать</a>
                     <a href="<?= $project['link'] ?>" class="btn btn-primary" target="_blank">Смотреть</a>
                     <a href="?delete=<?= $key ?>" class="btn btn-danger" onclick="return confirm('Удалить проект?')">Удалить</a>
                 </div>
