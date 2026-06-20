@@ -1,0 +1,23 @@
+.shadow-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shadow-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn {
+    border-radius: 25px;
+}
+
+@media (max-width: 768px) {
+    .shadow-hover:hover {
+        transform: none;
+    }
+}
