@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="author.css">
+    <title>Авторизация</title>
+</head>
+<body>
+    <center>
+    <div class="contant">
+        <div class="form-container"></div>
+            <h3>Авторизация</h3>
+            <form method="POST" action="author.php">
+                <input type="text" name="username" minlength="2" required placeholder="👤 Введите имя пользователя">
+                <input type="email" name="email" required placeholder="📧 Введите электронная почта">
+                <div style="display: flex; ">
+                    <input type="password" id="password" name="password" minlength="6" required placeholder="🔒 Введите пароль">
+                    <input class="toggle_password" style="margin-top: 20px;" onclick="togglePassword()" id="toggle-btn" placeholder="👁️">
+                </div>
+                <label for="agree">Я принимаю условия</label>
+                <input type="checkbox" class="custom-checkbox" id="agree">
+                <button>Отправить</button>
+            </form>
+        </div>
+    </div>
+    </center>
+<script>
+    function togglePassword() {
+    const passwordInput = document.getElementById('password');
+    const toggleBtn = document.getElementById('toggle-btn');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleBtn.textContent = '🙈'; // Меняем иконку на "скрыть"
+    } else {
+        passwordInput.type = 'password';
+        toggleBtn.textContent = '👁️'; // Возвращаем иконку "показать"
+    }
+}
+</script>
+</body>
+</html>

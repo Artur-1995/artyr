@@ -13,6 +13,7 @@ if (isset($_GET['delete'])) {
 
 $projects = json_decode(file_get_contents('projects.json'), true) ?? [];
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -23,7 +24,15 @@ $projects = json_decode(file_get_contents('projects.json'), true) ?? [];
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <div class="container py-5">
+    <a href="author.html" style="
+    padding: 15px 30px;
+    font-weight: bold;
+    border: 1.5px solid #001c9c" 
+    class="btn btn-primary"
+    >Войти</a>
+
     <h1 class="text-center mb-4">Мои проекты</h1>
     <div class="row">
         <?php foreach ($projects as $key => $project): ?>
